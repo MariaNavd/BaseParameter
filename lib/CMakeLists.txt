@@ -2,12 +2,14 @@ find_package(Boost COMPONENTS python310 REQUIRED)
 find_package(PythonLibs 3.10 REQUIRED)
 
 add_library(suffixtree SHARED)
-target_include_directories(suffixtree PUBLIC ${PYTHON_INCLUDE_DIRS})
+target_include_directories(suffixtree
+    PUBLIC
+        ${PYTHON_INCLUDE_DIRS}
+        ${PROJECT_SOURCE_DIR}/include
+)
 
 target_sources(suffixtree
-    PUBLIC FILE_SET headers TYPE HEADERS BASE_DIRS include FILES
-        include/suffix_tree.h
-    PUBLIC
+    PRIVATE
         src/suffix_tree.cpp
         src/bindings.cpp
 )
