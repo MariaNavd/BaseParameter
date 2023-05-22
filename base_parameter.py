@@ -2,7 +2,7 @@
 # by building suffix tree
 # (tasks no.4)
 import argparse
-from pyvis.network import Network
+# from pyvis.network import Network
 
 class DynamicSystem:
     data_quantized = []
@@ -47,6 +47,7 @@ class DynamicSystem:
                     bp = tmp
             bp += 1
 
+            # FIXME: plot suffix tree
             if plot_suffix_tree:
                 # adj = [*range(0, len(graph_edges) + 1)]
                 # nodes_labels = [str(x) for x in adj]
